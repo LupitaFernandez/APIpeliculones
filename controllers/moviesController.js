@@ -14,7 +14,7 @@ module.exports = {
             return res.status (200).json (result);
         })
     }, 
-    create: function (){
+    create: function (req,res){
         db.Movie.create ({
             title: req.body.title,
             rating: req.body.rating,
@@ -24,9 +24,6 @@ module.exports = {
         })
         .then (function (result){
             return res.status (201).json(result)
-        })
-        .catch ((error) => {
-            return res.json (error);
         })
     }
 }
